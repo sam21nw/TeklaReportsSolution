@@ -23,7 +23,7 @@
                     Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}"
                     FontFamily="Segoe UI"
                     FontSize="14" Margin="{adonisUi:Space 3,0}">
-    <Rectangle Width="16" Height="16" Fill="#007ACC">
+    <Rectangle Width="16" Height="16" Fill="#FF6961">
      <Rectangle.OpacityMask>
       <VisualBrush Stretch="Fill" 
 Visual="{StaticResource SettingsIcon}" />
@@ -41,8 +41,8 @@ Visual="{StaticResource SettingsIcon}" />
    <RowDefinition Height="*"/>
    <RowDefinition Height="Auto"/>
    <RowDefinition Height="Auto"/>
-
   </Grid.RowDefinitions>
+  
   <Grid.ColumnDefinitions>
    <ColumnDefinition Width="*" />
   </Grid.ColumnDefinitions>
@@ -52,6 +52,5 @@ Visual="{StaticResource SettingsIcon}" />
   <uc:ReportDataGridUserControl Grid.Row="2" />
   <uc:SummaryDataGridUserControl Grid.Row="3" />
   <uc:StatusBarUserControl Grid.Row="4" />
-  
  </Grid>
 </adonisControls:AdonisWindow>

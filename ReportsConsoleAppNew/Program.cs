@@ -7,7 +7,7 @@ using Tekla.Structures.Model;
 
 using AppExtensions;
 
-namespace ReportsApp
+namespace TeklaReportsApp
 {
   class Program
   {
@@ -76,8 +76,8 @@ namespace ReportsApp
       lock (_selectionEventHandlerLock)
       {
         Console.Clear();
-        ConsoleLogger cl = new ConsoleLogger();
-        cl.ShowReport();
+        ConsoleLogger.ShowReport("Hello dude");
+        ConsoleLogger.ShowReport("Hello rock");
       }
     }
 

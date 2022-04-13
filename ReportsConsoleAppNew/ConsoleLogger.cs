@@ -1,28 +1,31 @@
 using System;
 
-namespace ReportsApp
+namespace TeklaReportsApp
 {
-  class ConsoleLogger
+  public sealed class ConsoleLogger
   {
-    private static int _counter;
-    public static int Counter
+    private ConsoleLogger()
+    {
+    }
+    public static ConsoleLogger Instance
     {
       get
       {
-        return _counter;
+        return Nested.instance;
       }
-      set
+    }
+    private class Nested
+    {
+      // Explicit static constructor to tell C# compiler
+      // not to mark type as beforefieldinit
+      static Nested()
       {
-        _counter = value;
       }
+      internal static readonly ConsoleLogger instance = new ConsoleLogger();
     }
-    public ConsoleLogger()
+    public static void ShowReport(string message)
     {
-      Counter++;
-    }
-    public void ShowReport()
-    {
-      Console.WriteLine($"Report displayed. Counter: {Counter}");
+      Console.WriteLine(message);
     }
   }
 }
