@@ -7,6 +7,10 @@ using System.Windows.Input;
 
 using Tekla.Structures.Model;
 
+using AppExtensions;
+
+using TeklaReportsApp.UserControls;
+
 namespace TeklaReportsApp
 {
   /// <summary>
@@ -42,15 +46,19 @@ namespace TeklaReportsApp
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
+     StatusBarUserControl StatusBarUserControl = new StatusBarUserControl();
       try
       {
         if (!_model.GetConnectionStatus())
         {
-          //reportStatus.Text = "Tekla 2016 model is not connected...";
+          //StatusBarUserControl.ReportStatus = "Tekla Structures 2016 Model is not connected";
           return;
         }
         else
         {
+          var modelName = _model.GetInfo().ModelName;
+          StatusBarUserControl.ReportStatus = $"Connected Model: {modelName}";
+
           RegisterEventHandler();
           var window = e.Source as Window;
           System.Threading.Thread.Sleep(100);
@@ -82,8 +90,15 @@ namespace TeklaReportsApp
     private void Events_SelectionChangeEvent()
     {
       /* Make sure that the inner code block is running synchronously */
+     StatusBarUserControl StatusBarUserControl = new StatusBarUserControl();
       lock (_selectionEventHandlerLock)
       {
+        if (!_model.IsConnected())
+        {
+          //StatusBarUserControl.ReportStatus = "Tekla Structures 2016 Model is not connected";
+          return;
+        }
+        //StatusBarUserControl.ReportStatus = "Tekla Structures 2016 Model is connected";
       }
     }
     private void Events_TeklaExitEvent()

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:TeklaReportsApp"
         xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
-        xmlns:uc="clr-namespace:TeklaReportsApp.UserControls"
+        xmlns:uc="clr-namespace:TeklaReportsApp.UserControls"                   
         mc:Ignorable="d"
         Title="Tekla Reports App T2016" Topmost="True" ShowInTaskbar="False" 
         WindowStartupLocation="CenterScreen" Height="540" Width="1000" >
-
+ 
  <adonisControls:AdonisWindow.Style>
   <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
    <Setter Property="FontSize" Value="11.6" />
@@ -33,7 +33,7 @@ Visual="{StaticResource SettingsIcon}" />
    <ToggleButton Style="{DynamicResource {x:Static adonisUi:Styles.ToggleSwitch}}" IsChecked="{Binding IsDark, RelativeSource={RelativeSource FindAncestor, AncestorType=local:MainWindow}}" Content="Dark" Margin="{adonisUi:Space 1,0}"/>
   </StackPanel>
  </adonisControls:AdonisWindow.TitleBarContent>
- 
+
  <Grid>
   <Grid.RowDefinitions>
    <RowDefinition Height="Auto"/>

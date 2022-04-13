@@ -24,7 +24,7 @@
     </ItemsPanelTemplate>
    </StatusBar.ItemsPanel>
    <StatusBarItem>
-    <TextBlock Name="reportStatus" />
+    <TextBlock Text="{Binding ReportStatus}" />
    </StatusBarItem>
    <!-- <Separator Grid.Column="1" /> -->
    <StatusBarItem Grid.Column="2">

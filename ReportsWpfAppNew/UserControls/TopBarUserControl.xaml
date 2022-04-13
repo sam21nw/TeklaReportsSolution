@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TeklaReportsApp.UserControls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"  
              mc:Ignorable="d" >
 
  <Border Margin="2,0" BorderBrush="DarkGray" BorderThickness="1"  >
@@ -29,9 +30,9 @@
    <StackPanel Grid.Column="1" Margin="4,0" Orientation="Horizontal" VerticalAlignment="Center">
     <Label Name="LabelReportType" FontWeight="Normal" Margin="0,0,2,0" HorizontalAlignment="Left" VerticalContentAlignment="Center">Type:
     </Label>
-    <ComboBox Name="ComboBoxSearchReport" HorizontalAlignment="Left" VerticalAlignment="Center" Width="84">
-     <ComboBoxItem Content="Combined" IsSelected="True"></ComboBoxItem>
-     <ComboBoxItem Content="Unique"></ComboBoxItem>
+    <ComboBox Name="ComboBoxReportType" HorizontalAlignment="Left" VerticalAlignment="Center" Width="84">
+     <ComboBoxItem Name="combined" IsSelected="True">Combined</ComboBoxItem>
+     <ComboBoxItem Name="unique">Unique</ComboBoxItem>
     </ComboBox>
    </StackPanel>
    <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0" >
