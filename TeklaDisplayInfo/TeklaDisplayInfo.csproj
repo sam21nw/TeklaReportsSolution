@@ -11,7 +11,6 @@
    <Authors>Sam Jacob</Authors>
    <Company>BrewTek</Company>
    <Copyright>copyright © 2022</Copyright>
-   <StartupObject>TeklaDisplayInfo.App</StartupObject>
    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
 

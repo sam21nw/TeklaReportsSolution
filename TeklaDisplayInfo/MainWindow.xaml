@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TeklaDisplayInfo"
         mc:Ignorable="d"
         Title="MainWindow" Height="0" Width="0" Topmost="True" ResizeMode="NoResize" 
-        ShowInTaskbar="False" AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+        ShowInTaskbar="False" AllowsTransparency="True" Background="Transparent" WindowStyle="None" >
     <Grid>
 
     </Grid>

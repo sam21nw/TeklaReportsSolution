@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeklaDisplayInfo
 {
-  internal class MainPartsSchedule
+  internal class ModelObjectsSchedule
   {
   }
 }

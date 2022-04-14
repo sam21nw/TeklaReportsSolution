@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System;
-using System.Data;
-
 using Tekla.Structures;
 using Tekla.Structures.Model;
 
@@ -35,6 +33,7 @@ namespace AppExtensions
     {
       enumerator.SelectInstances = false;
       var modelObjects = new List<ModelObject>();
+
       while (enumerator.MoveNext())
       {
         var modelObject = enumerator.Current;

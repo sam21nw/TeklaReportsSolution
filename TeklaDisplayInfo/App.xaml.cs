@@ -38,7 +38,8 @@ namespace TeklaDisplayInfo
         Text = appName
       };
       _notifyIcon.DoubleClick += (s, args) => RestartApplication();
-      _notifyIcon.Icon = new Icon(@"E:\Tekla\09_Applications\windows apps\TeklaReportsWpfSolution\TeklaReportsApp_T2016\Icon.ico");
+      
+      _notifyIcon.Icon = new Icon(@"D:\sam_working\Settings\Tekla\04_Applications\TeklaReportsSolution_T2016\TeklaDisplayInfo\Icon.ico");
       _notifyIcon.Visible = true;
 
       CreateContextMenu();

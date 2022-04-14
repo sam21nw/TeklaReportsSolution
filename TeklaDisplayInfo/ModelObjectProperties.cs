@@ -1,6 +1,6 @@
 ﻿namespace TeklaDisplayInfo
 {
-  internal class MainPartProperties
+  internal class ModelObjectProperties
   {
     public string Name { get; set; }
     public string TopLevel { get; set; }
@@ -9,6 +9,8 @@
     public string AssemblyPosition { get; set; }
     public string PartPosition { get; set; }
     public string Profile { get; set; }
+    public string Length { get; set; }
+    public string Width { get; set; }
     public double Area { get; set; }
     public double CutArea { get; set; }
     public double Weight { get; set; }
