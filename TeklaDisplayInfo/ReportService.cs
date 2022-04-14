@@ -9,23 +9,14 @@ namespace TeklaDisplayInfo
 {
   public static class ReportService
   {
-    public static string GetReport(this ModelObject obj)
+    public static void GetReport(this ModelObject obj)
     {
-      string result = string.Empty;
       var combinedObjectProperties = new List<ModelObjectProperties>();
 
       if (obj.IsGrating())
       {
-        GetGratingReport();
+        ModelObjectsSchedule.GetGratingReportProperties(obj, combinedObjectProperties);
       }
-
-      return result.ToString();
-    }
-
-    private static string GetGratingReport()
-    {
-
-      return string.Empty;
     }
 
     private static bool IsGrating(this ModelObject mo)
