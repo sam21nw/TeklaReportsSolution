@@ -7,7 +7,7 @@ using System.Windows;
 
 using Tekla.Structures.Model;
 
-namespace TeklaDisplayInfo
+namespace InfoDisplay_2016
 {
   /// <summary>
   /// Interaction logic for App.xaml
@@ -18,9 +18,11 @@ namespace TeklaDisplayInfo
     private Events _events = null;
     private readonly object _selectionEventHandlerLock = new object();
     private readonly object _tsExitEventHandlerLock = new object();
+
     private System.Windows.Forms.NotifyIcon _notifyIcon;
     private bool _isExit;
-    const string appName = "TeklaDisplayInfo_T2016";
+    const string appName = "TeklaInfoDisplay_2016";
+
     protected override void OnStartup(StartupEventArgs e)
     {
       Mutex _mutex = new Mutex(true, appName, out bool createdNew);
@@ -33,20 +35,20 @@ namespace TeklaDisplayInfo
 
       MainWindow = new MainWindow();
       MainWindow.Closing += MainWindow_Closing;
+
       _notifyIcon = new System.Windows.Forms.NotifyIcon
       {
         Text = appName
       };
       _notifyIcon.DoubleClick += (s, args) => RestartApplication();
 
-      _notifyIcon.Icon = TeklaDisplayInfo.Properties.Resources.Icon;
+      _notifyIcon.Icon = TeklaInfoDisplay.Properties.Resources.Icon;
       _notifyIcon.Visible = true;
 
       CreateContextMenu();
       StartDisplayInfo();
       base.OnStartup(e);
     }
-
     private void CreateContextMenu()
     {
       _notifyIcon.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
@@ -58,15 +60,17 @@ namespace TeklaDisplayInfo
     private void StartDisplayInfo()
     {
       UnRegisterEventHandler();
-      if (!_model.GetConnectionStatus())
+      if (_model.GetConnectionStatus())
       {
-        App.Current.Shutdown();
+        _events = new Events();
+        _events.TeklaStructuresExit += this.Events_TeklaExitEvent;
+        _events.SelectionChange += this.Events_SelectionChanged;
+        _events.Register();
+      }
+      else
+      {
         return;
       }
-      _events = new Events();
-      _events.TeklaStructuresExit += this.Events_TeklaExitEvent;
-      _events.SelectionChange += this.Events_SelectionChanged;
-      _events.Register();
     }
     private void StopDisplayInfo()
     {
@@ -117,7 +121,7 @@ namespace TeklaDisplayInfo
     {
       lock (_selectionEventHandlerLock)
       {
-        LoggerService.DisplayInfo();
+        DisplayInfoService.DisplayInfo();
       }
     }
 
@@ -130,4 +134,5 @@ namespace TeklaDisplayInfo
       }
     }
   }
+
 }
