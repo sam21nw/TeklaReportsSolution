@@ -3,17 +3,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 using Tekla.Structures.Model;
-using Tekla.Structures.Model.Operations;
 
 namespace TeklaDisplayInfo
 {
-  internal static class ModelObjectsSchedule
+  internal class ModelObjectsSchedule
   {
-    public static void GetGratingReportProperties(ModelObject GratingPart, List<ModelObjectProperties> GratingPropsList)
+    public static ModelObjectProperties GetObjectReportProperties(ModelObject mo)
     {
+      string name = string.Empty;
       string grAssPos = string.Empty;
       int modelTotal = 0;
       double grLength = 0.000;
@@ -23,36 +22,42 @@ namespace TeklaDisplayInfo
       double netWeight = 0.000;
       double grossWeight = 0.000;
       double topLevel = 0.000;
+      double bottomLevel = 0.000;
       string userPhase = string.Empty;
       string userField4 = string.Empty;
       string userField3 = string.Empty;
       string position = string.Empty;
 
-      ArrayList secondaries = ((Part)GratingPart).GetAssembly().GetSecondaries();
-      ModelObjectProperties gratingProperties = new ModelObjectProperties();
+      ArrayList secondaries = ((Part)mo).GetAssembly().GetSecondaries();
+      ModelObjectProperties moProps = new ModelObjectProperties();
 
-      GratingPart.GetReportProperty("ASSEMBLY_POS", ref grAssPos);
-      GratingPart.GetReportProperty("MODEL_TOTAL", ref modelTotal);
-      GratingPart.GetReportProperty("LENGTH", ref grLength);
-      GratingPart.GetReportProperty("HEIGHT", ref grWidth);
-      GratingPart.GetReportProperty("AREA_PROJECTION_XY_GROSS", ref grossArea);
-      GratingPart.GetReportProperty("AREA_PROJECTION_XY_NET", ref netArea);
-      GratingPart.GetReportProperty("USER_PHASE", ref userPhase);
-      GratingPart.GetReportProperty("USER_FIELD_4", ref userField4);
-      GratingPart.GetReportProperty("USER_FIELD_3", ref userField3);
-      GratingPart.GetReportProperty("WEIGHT_NET", ref netWeight);
-      GratingPart.GetReportProperty("WEIGHT_GROSS", ref grossWeight);
-      GratingPart.GetReportProperty("TOP_LEVEL_UNFORMATTED", ref topLevel);
-      GratingPart.GetReportProperty("ASSEMBLY.ASSEMBLY_POSITION_CODE", ref position);
+      mo.GetReportProperty("NAME", ref name);
+      mo.GetReportProperty("ASSEMBLY_POS", ref grAssPos);
+      mo.GetReportProperty("MODEL_TOTAL", ref modelTotal);
+      mo.GetReportProperty("LENGTH", ref grLength);
+      mo.GetReportProperty("HEIGHT", ref grWidth);
+      mo.GetReportProperty("AREA_PROJECTION_XY_GROSS", ref grossArea);
+      mo.GetReportProperty("AREA_PROJECTION_XY_NET", ref netArea);
+      mo.GetReportProperty("USER_PHASE", ref userPhase);
+      mo.GetReportProperty("USER_FIELD_4", ref userField4);
+      mo.GetReportProperty("USER_FIELD_3", ref userField3);
+      mo.GetReportProperty("WEIGHT_NET", ref netWeight);
+      mo.GetReportProperty("WEIGHT_GROSS", ref grossWeight);
+      mo.GetReportProperty("TOP_LEVEL_UNFORMATTED", ref topLevel);
+      mo.GetReportProperty("BOTTOM_LEVEL_UNFORMATTED", ref bottomLevel);
+      mo.GetReportProperty("ASSEMBLY.ASSEMBLY_POSITION_CODE", ref position);
 
-      gratingProperties.PartPosition = ((Part)GratingPart).GetPartMark();
-      gratingProperties.AssemblyPosition = grAssPos;
+      moProps.Name = name;
+      moProps.TopLevel = topLevel.MMtoFeetInches();
+      moProps.BottomLevel = bottomLevel.MMtoFeetInches();
+      moProps.PartPosition = ((Part)mo).GetPartMark();
+      moProps.AssemblyPosition = grAssPos;
+      moProps.Quantity = modelTotal;
 
-      gratingProperties.Quantity = modelTotal;
-      gratingProperties.Length = Math.Round(grLength, 0, MidpointRounding.AwayFromZero);
-      gratingProperties.Width = Math.Round(grWidth, 0, MidpointRounding.AwayFromZero);
-      gratingProperties.LengthImperial = grLength.MMtoFeetInches();
-      gratingProperties.WidthImperial = grWidth.MMtoFeetInches();
+      moProps.Length = Math.Round(grLength, 0, MidpointRounding.AwayFromZero);
+      moProps.Width = Math.Round(grWidth, 0, MidpointRounding.AwayFromZero);
+      moProps.LengthImperial = grLength.MMtoFeetInches();
+      moProps.WidthImperial = grWidth.MMtoFeetInches();
 
       double weightDiff = grossWeight - netWeight;
       double gratingArea = (weightDiff == 0) ? netArea : grossArea;
@@ -62,14 +67,13 @@ namespace TeklaDisplayInfo
 
       double whArea = cutArea > 0.2 ? netArea : grossArea;
 
-      gratingProperties.CutArea = cutArea;
-      gratingProperties.Area = gratingArea * 1E-06;
-      gratingProperties.WHArea = whArea * 1E-06;
-      gratingProperties.UserPhase = userPhase;
-      gratingProperties.UserField4 = userField4;
-      gratingProperties.UserField3 = userField3;
-      gratingProperties.TopLevel = topLevel.MMtoFeetInches();
-      gratingProperties.Position = position;
+      moProps.CutArea = cutArea;
+      moProps.Area = gratingArea * 1E-06;
+      moProps.WHArea = whArea * 1E-06;
+      moProps.UserPhase = userPhase;
+      moProps.UserField4 = userField4;
+      moProps.UserField3 = userField3;
+      moProps.Position = position;
 
       if (secondaries != null)
       {
@@ -129,13 +133,14 @@ namespace TeklaDisplayInfo
 
             chqTotalArea += Math.Round(chqArea * 1E-06, 3);
           }
-          gratingProperties.TpLength = tpLength;
-          gratingProperties.BbLength = bbLength;
-          gratingProperties.NsLength = nsLength;
-          gratingProperties.ChqArea = chqTotalArea;
+          moProps.TpLength = tpLength;
+          moProps.BbLength = bbLength;
+          moProps.NsLength = nsLength;
+          moProps.ChqArea = chqTotalArea;
         }
       }
-      GratingPropsList.Add(gratingProperties);
+
+      return moProps;
     }
   }
 }

@@ -12,6 +12,7 @@
    <Company>BrewTek</Company>
    <Copyright>copyright © 2022</Copyright>
    <ApplicationIcon>Icon.ico</ApplicationIcon>
+   <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
    <PrivateAssets>all</PrivateAssets>
    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
   </PackageReference>
+  <PackageReference Include="System.Resources.Extensions" Version="7.0.0-preview.3.22175.4" />
  </ItemGroup>
 
  <!-- Conditionally obtain references for the .NET Framework 4.8 target -->
