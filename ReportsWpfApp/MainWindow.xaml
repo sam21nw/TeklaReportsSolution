@@ -90,7 +90,7 @@ Visual="{StaticResource SettingsIcon}" />
    <StackPanel Grid.Column="6" Margin="4,0" Orientation="Horizontal" VerticalAlignment="Center">
     <Label Name="LabelFilterReport" FontWeight="Normal" Margin="0,0,2,0" HorizontalAlignment="Right" VerticalContentAlignment="Center">Filter:
     </Label>
-    <TextBox Style="{StaticResource placeHolder}" Name="TextBoxFilterReport" Width="112" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Tag="not implemented">
+    <TextBox Style="{StaticResource placeHolder}" Name="TextBoxFilterReport" Width="116" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Tag="not implenmented">
     </TextBox>
    </StackPanel>
   </Grid>

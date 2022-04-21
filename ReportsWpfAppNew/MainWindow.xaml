@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         Title="Tekla Reports App T2016" Topmost="True" ShowInTaskbar="False" 
         WindowStartupLocation="CenterScreen" Height="540" Width="1000" >
- 
+
  <adonisControls:AdonisWindow.Style>
   <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}">
    <Setter Property="FontSize" Value="11.6" />

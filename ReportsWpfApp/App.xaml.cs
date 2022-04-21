@@ -3,8 +3,6 @@
 using System.Threading.Tasks;
 using System.Windows;
 
-using TeklaReportsApp;
-
 namespace TeklaReportsApp
 {
   /// <summary>

@@ -222,13 +222,7 @@ namespace TeklaReportsApp
             partList.Add((Part)obj);
           }
         });
-        listStr.ForEach((item) =>
-                {
-                  if (name.ToUpper().Contains(item))
-                  {
-                    partList.Add((Part)obj);
-                  }
-                });
+
         //if (listStr.Any(name.ToUpper().Contains) || listStr.Any(partPrefix.ToUpper().Contains) || listStr.Any(assPrefix.ToUpper().Contains))
         //{
         //  partList.Add((Part)obj);

@@ -46,18 +46,18 @@ namespace TeklaReportsApp
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-     StatusBarUserControl StatusBarUserControl = new StatusBarUserControl();
+      PersonModel p = new PersonModel();
       try
       {
         if (!_model.GetConnectionStatus())
         {
-          //StatusBarUserControl.ReportStatus = "Tekla Structures 2016 Model is not connected";
+          p.Name = "Tekla Structures 2016 Model is not connected";
           return;
         }
         else
         {
           var modelName = _model.GetInfo().ModelName;
-          StatusBarUserControl.ReportStatus = $"Connected Model: {modelName}";
+          p.Name = $"Connected Model: {modelName}";
 
           RegisterEventHandler();
           var window = e.Source as Window;
@@ -91,14 +91,15 @@ namespace TeklaReportsApp
     {
       /* Make sure that the inner code block is running synchronously */
      StatusBarUserControl StatusBarUserControl = new StatusBarUserControl();
+      PersonModel p = new PersonModel();
       lock (_selectionEventHandlerLock)
       {
         if (!_model.IsConnected())
         {
-          //StatusBarUserControl.ReportStatus = "Tekla Structures 2016 Model is not connected";
+          p.Name = "Tekla Structures 2016 Model is not connected";
           return;
         }
-        //StatusBarUserControl.ReportStatus = "Tekla Structures 2016 Model is connected";
+        p.Name = "Tekla Structures 2016 Model is connected";
       }
     }
     private void Events_TeklaExitEvent()

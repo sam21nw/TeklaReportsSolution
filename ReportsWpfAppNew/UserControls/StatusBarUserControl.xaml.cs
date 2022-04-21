@@ -13,7 +13,6 @@ namespace TeklaReportsApp.UserControls
     public StatusBarUserControl()
     {
       InitializeComponent();
-      DataContext = this;
       string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
       TextBlockVersion.Text = version;
@@ -24,9 +23,10 @@ namespace TeklaReportsApp.UserControls
       {
         return;
       }
-      ReportStatus = "Hello World";
-    }
 
-    public string ReportStatus { get; set; }
+      PersonModel personModel = new PersonModel();
+
+      TextBlockReportStatus.Text = personModel.Name;
+    }
   }
 }
