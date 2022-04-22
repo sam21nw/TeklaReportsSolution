@@ -33,7 +33,8 @@ namespace TeklaDisplayInfo
 
     internal static void DisplayInfo()
     {
-      Operation.DisplayPrompt(string.Empty);
+      string result = string.Empty;
+      Operation.DisplayPrompt(result);
     }
   }
 }

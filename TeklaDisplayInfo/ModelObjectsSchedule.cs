@@ -10,7 +10,7 @@ namespace TeklaDisplayInfo
 {
   internal class ModelObjectsSchedule
   {
-    public static ModelObjectProperties GetObjectReportProperties(ModelObject mo)
+    public static void GetObjectReportProperties(ModelObject moModelObjectProperties)
     {
       string name = string.Empty;
       string grAssPos = string.Empty;
