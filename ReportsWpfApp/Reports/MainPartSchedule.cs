@@ -71,7 +71,7 @@ namespace TeklaReportsApp
       MainPartProperties.PartPos = PrimaryPart.GetPartMark();
       var mpm = MainPart.GetPartMark();
 
-      MainPartProperties.Quantity = modelTotal;
+      //MainPartProperties.Quantity = modelTotal;
       MainPartProperties.Length = Math.Round(grLength, 0, MidpointRounding.AwayFromZero);
       MainPartProperties.Width = Math.Round(grWidth, 0, MidpointRounding.AwayFromZero);
       MainPartProperties.Length_Imperial = grLength.MMtoFeetInches();
