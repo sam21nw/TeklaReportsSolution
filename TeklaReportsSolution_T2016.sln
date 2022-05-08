@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportsWpfAppNew", "Reports
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeklaDisplayInfo", "TeklaDisplayInfo\TeklaDisplayInfo.csproj", "{4CE98A2A-546F-410F-811B-38C7D81126E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeklaInfoDisplay", "TeklaInfoDisplay\TeklaInfoDisplay.csproj", "{6F103D48-6459-4606-A1D3-9DAE55DAC206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeklaInfoDisplay_T2016", "TeklaInfoDisplay_T2016\TeklaInfoDisplay_T2016.csproj", "{6F103D48-6459-4606-A1D3-9DAE55DAC206}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppCheck", "WpfAppCheck\WpfAppCheck.csproj", "{6453C8B2-C1C7-47C8-8A24-104E92B9529E}"
 EndProject
