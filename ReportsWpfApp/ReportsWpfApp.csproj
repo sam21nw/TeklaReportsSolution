@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
     <RootNamespace>TeklaReportsApp</RootNamespace>
+  <AssemblyName>ReportsWpfApp_T2016</AssemblyName>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Version>0.6.1.0</Version>
     <Authors>Sam Jacob</Authors>
