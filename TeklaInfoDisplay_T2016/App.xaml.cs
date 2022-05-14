@@ -7,6 +7,8 @@ using System.Windows;
 
 using Tekla.Structures.Model;
 
+using TeklaInfoDisplay;
+
 namespace InfoDisplay_2016
 {
   /// <summary>

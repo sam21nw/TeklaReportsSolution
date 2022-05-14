@@ -1,9 +1,9 @@
 ﻿using Tekla.BIM.Quantities;
 using Tekla.Structures.Model;
 
-using InfoDisplay_2019;
+using TeklaInfoDisplay;
 
-namespace UtilityExtensions
+namespace TeklaInfoDisplay.UtilityExtensions
 {
   /// <summary>
   /// Extensions class for Tekla.BIM.Quantities class

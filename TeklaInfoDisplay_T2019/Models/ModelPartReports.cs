@@ -1,13 +1,15 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 using Tekla.BIM.Quantities;
 using Tekla.Structures.Model;
 
-using UtilityExtensions;
+using TeklaInfoDisplay;
+using TeklaInfoDisplay.UtilityExtensions;
 
-namespace InfoDisplay_2019
+namespace TeklaInfoDisplay.Models
 {
   public static class ModelPartReports
   {
@@ -122,7 +124,7 @@ namespace InfoDisplay_2019
       double cutOutArea = Math.Round((grossArea - netArea) / 1000000, 3);
 
       string ps = weightDiff > 0 || suppPartWeight > 0 ? "Shp" : "Pln";
-      double gratingArea = (weightDiff == 0) ? netArea : grossArea;
+      double gratingArea = weightDiff == 0 ? netArea : grossArea;
 
       var gratingAreaMetric = new Area(gratingArea).ToMetricUnits();
       var gratingAreaImperial = new Area(gratingArea).ToImperialUnits();
@@ -154,10 +156,10 @@ namespace InfoDisplay_2019
         objectName = $"{contentType}";
       }
 
-      var uF4Strs = (userField4.Length != 0) ? $", U/F4:{userField4}" : "";
-      var uF3Strs = (userField3.Length != 0) ? $", U/F3:{userField3}" : "";
-      var uF2Strs = (userField2.Length != 0) ? $", U/F2:{userField2}" : "";
-      var uF1Strs = (userField1.Length != 0) ? $", U/F1:{userField1}" : "";
+      var uF4Strs = userField4.Length != 0 ? $", U/F4:{userField4}" : "";
+      var uF3Strs = userField3.Length != 0 ? $", U/F3:{userField3}" : "";
+      var uF2Strs = userField2.Length != 0 ? $", U/F2:{userField2}" : "";
+      var uF1Strs = userField1.Length != 0 ? $", U/F1:{userField1}" : "";
 
       var userStrs = $"U/Ph:{userPhase}{uF4Strs}{uF3Strs}{uF2Strs}{uF1Strs}";
 

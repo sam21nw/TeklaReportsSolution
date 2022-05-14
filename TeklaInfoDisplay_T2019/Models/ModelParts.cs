@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using System.Linq;
 
 using Tekla.Structures.Model;
 
+using TeklaInfoDisplay;
+
 using TSMUI = Tekla.Structures.Model.UI;
 
-namespace InfoDisplay_2019
+namespace TeklaInfoDisplay.Models
 {
   public static class ModelParts
   {

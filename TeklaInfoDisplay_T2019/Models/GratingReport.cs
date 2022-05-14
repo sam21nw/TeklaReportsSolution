@@ -1,13 +1,14 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 using Tekla.BIM.Quantities;
 using Tekla.Structures.Model;
 
-using UtilityExtensions;
+using TeklaInfoDisplay.UtilityExtensions;
 
-namespace InfoDisplay_2019
+namespace TeklaInfoDisplay.Models
 {
   internal class GratingReport
   {
@@ -74,8 +75,8 @@ namespace InfoDisplay_2019
         double weightDiff = Math.Round(grossWeight - netWeight, 3);
         double cutOutArea = Math.Round((grossArea - netArea) / 1000000, 3);
         string ps = weightDiff > 0 || suppPartWeight > 0 ? "Shp" : "Pln";
-        gratingArea = (weightDiff == 0) ? netArea : grossArea;
-        gratingAreaWHare = (cutOutArea > 0.2) ? netArea : grossArea;
+        gratingArea = weightDiff == 0 ? netArea : grossArea;
+        gratingAreaWHare = cutOutArea > 0.2 ? netArea : grossArea;
 
         totalGratingNos += 1;
         totalGratingArea += gratingArea;
@@ -227,8 +228,8 @@ namespace InfoDisplay_2019
         double weightDiff = Math.Round(grossWeight - netWeight, 3);
         double cutOutArea = Math.Round((grossArea - netArea) / 1000000, 3);
 
-        double gratingArea = (weightDiff == 0) ? netArea : grossArea;
-        double gratingAreaWHare = (cutOutArea > 0.2) ? netArea : grossArea;
+        double gratingArea = weightDiff == 0 ? netArea : grossArea;
+        double gratingAreaWHare = cutOutArea > 0.2 ? netArea : grossArea;
         totalGratingAssNos += 1;
         totalGratingArea += gratingArea;
         totalGratingAssWeight += grossWeight;
@@ -342,8 +343,8 @@ namespace InfoDisplay_2019
         double weightDiff = Math.Round(grossWeight - netWeight, 3);
         double cutOutArea = Math.Round((grossArea - netArea) / 1000000, 3);
         string ps = weightDiff > 0 || suppPartWeight > 0 ? "Shp" : "Pln";
-        cplArea = (weightDiff == 0) ? netArea : grossArea;
-        cplAreaWHare = (cutOutArea > 0.2) ? netArea : grossArea;
+        cplArea = weightDiff == 0 ? netArea : grossArea;
+        cplAreaWHare = cutOutArea > 0.2 ? netArea : grossArea;
 
         totalCplNos += 1;
         totalCplArea += cplArea;

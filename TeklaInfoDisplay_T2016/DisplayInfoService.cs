@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
@@ -6,7 +7,9 @@ using System.Windows;
 using Tekla.Structures.Model;
 using Tekla.Structures.Model.Operations;
 
-namespace InfoDisplay_2016
+using TeklaInfoDisplay.Models;
+
+namespace TeklaInfoDisplay
 {
   public static class DisplayInfoService
   {
@@ -26,7 +29,7 @@ namespace InfoDisplay_2016
           var selObj = selectedObjects.First();
           if (selObj.GetType() == typeof(ControlPoint))
           {
-            result = ModelControlObjectReports.GetPointCoords((ControlPoint)selObj);
+            result = ((ControlPoint)selObj).GetPointCoords();
           }
           else
           {

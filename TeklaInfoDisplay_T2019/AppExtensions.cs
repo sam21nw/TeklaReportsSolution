@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 
 using Tekla.Structures;
 using Tekla.Structures.Model;
 
-namespace InfoDisplay_2019
+namespace TeklaInfoDisplay
 {
   public static class AppExtensions
   {

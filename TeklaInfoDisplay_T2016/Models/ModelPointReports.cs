@@ -2,9 +2,11 @@
 using Tekla.BIM.Quantities;
 using Tekla.Structures.Model;
 
+using TeklaInfoDisplay.UtilityExtensions;
+
 using UtilityExtensions;
 
-namespace InfoDisplay_2016
+namespace TeklaInfoDisplay.Models
 {
   internal static class ModelControlObjectReports
   {
