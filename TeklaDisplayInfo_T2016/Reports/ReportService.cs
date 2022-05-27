@@ -6,7 +6,7 @@ using Tekla.Structures.Model.Operations;
 
 using Tekla.Structures.Model;
 
-namespace TeklaDisplayInfo.Reports
+namespace Reports
 {
   public static class ReportService
   {

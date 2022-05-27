@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace TeklaInfoDisplay.UtilityExtensions
+namespace UtilityExtensions
 {
   public class AlphanumComparator : IComparer
   {

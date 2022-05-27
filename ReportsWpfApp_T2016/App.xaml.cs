@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows;
 
-using TeklaReportsApp.AppExtensions;
+using AppExtensions;
 
 namespace TeklaReportsApp
 {

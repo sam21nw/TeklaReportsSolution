@@ -4,11 +4,11 @@ using System.Linq;
 
 using Tekla.Structures.Model;
 
-using TeklaDisplayInfo.AppExtensions;
+using AppExtensions;
 
 using TSMUI = Tekla.Structures.Model.UI;
 
-namespace TeklaDisplayInfo.Reports
+namespace Reports
 {
   internal static class SelectedModelParts
   {

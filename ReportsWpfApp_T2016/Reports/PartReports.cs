@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 using Tekla.Structures.Model;
 
-using TeklaReportsApp.PartProperties;
+using PartProperties;
 
-namespace TeklaReportsApp.Reports
+namespace Reports
 {
   internal static class PartReports
   {

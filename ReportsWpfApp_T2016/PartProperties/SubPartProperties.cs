@@ -1,4 +1,4 @@
-﻿namespace TeklaReportsApp.PartProperties
+﻿namespace PartProperties
 {
   internal class SubPartProperties
   {

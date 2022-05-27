@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 using Tekla.Structures.Model;
 
-using TeklaReportsApp.AppExtensions;
-using TeklaReportsApp.PartProperties;
+using AppExtensions;
+using PartProperties;
 
-namespace TeklaReportsApp.Reports
+namespace Reports
 {
   public static class MainPartSchedule
   {

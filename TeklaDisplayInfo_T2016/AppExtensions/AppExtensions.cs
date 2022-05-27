@@ -7,9 +7,9 @@ using Tekla.Structures;
 using Tekla.Structures.Model;
 
 using TSMUI = Tekla.Structures.Model.UI;
-using TeklaDisplayInfo.AppExtensions;
+using AppExtensions;
 
-namespace TeklaDisplayInfo.AppExtensions
+namespace AppExtensions
 {
   public static class Extensions
   {

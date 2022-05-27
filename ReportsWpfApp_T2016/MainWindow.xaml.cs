@@ -16,9 +16,9 @@ using Tekla.Structures;
 using Tekla.Structures.Model;
 using Tekla.Structures.ModelInternal;
 
-using TeklaReportsApp.AppExtensions;
-using TeklaReportsApp.PartProperties;
-using TeklaReportsApp.Reports;
+using AppExtensions;
+using PartProperties;
+using Reports;
 
 namespace TeklaReportsApp
 {

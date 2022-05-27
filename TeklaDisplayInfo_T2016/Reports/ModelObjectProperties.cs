@@ -1,4 +1,4 @@
-﻿namespace TeklaDisplayInfo.Reports
+﻿namespace Reports
 {
   internal class ModelObjectProperties
   {

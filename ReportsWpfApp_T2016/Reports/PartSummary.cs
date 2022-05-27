@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 using Tekla.Structures.Model;
 
-using TeklaReportsApp.AppExtensions;
-using TeklaReportsApp.PartProperties;
+using AppExtensions;
+using PartProperties;
 
-namespace TeklaReportsApp.Reports
+namespace Reports
 {
   internal static class PartSummary
   {

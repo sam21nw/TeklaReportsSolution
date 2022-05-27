@@ -1,4 +1,4 @@
-﻿namespace TeklaReportsApp.PartProperties
+﻿namespace PartProperties
 {
   public class MainPartProperties
   {

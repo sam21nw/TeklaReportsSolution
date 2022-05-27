@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 using Tekla.Structures.Model;
 
-using TeklaDisplayInfo.AppExtensions;
-using TeklaDisplayInfo.Reports;
+using AppExtensions;
+using Reports;
 
 namespace TeklaDisplayInfo
 {

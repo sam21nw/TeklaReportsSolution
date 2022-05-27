@@ -12,7 +12,7 @@
     <Authors>Sam Jacob</Authors>
     <Company>BrewTek</Company>
     <Copyright>copyright © 2022</Copyright>
-    <StartupObject>TeklaReportsApp.App</StartupObject>
+    <StartupObject>App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

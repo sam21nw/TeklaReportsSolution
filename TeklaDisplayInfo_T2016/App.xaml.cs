@@ -39,7 +39,7 @@ namespace TeklaDisplayInfo
       };
       _notifyIcon.DoubleClick += (s, args) => RestartApplication();
 
-      _notifyIcon.Icon = TeklaDisplayInfo.Properties.Resources.Icon;
+      _notifyIcon.Icon = Properties.Resources.Icon;
       _notifyIcon.Visible = true;
 
       CreateContextMenu();

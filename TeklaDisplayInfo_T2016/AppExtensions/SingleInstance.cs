@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace TeklaDisplayInfo.AppExtensions
+namespace AppExtensions
 {
   public sealed class SingleInstance
   {

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeklaDisplayInfo.AppExtensions
+namespace AppExtensions
 {
   public class ListtoDataTableConverter
   {

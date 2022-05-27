@@ -1,12 +1,11 @@
-﻿<Window x:Class="MainWindow"
+﻿<Window x:Class="TeklaDisplayInfo_T2021.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TeklaDisplayInfo"
+        xmlns:local="clr-namespace:TeklaDisplayInfo_T2021"
         mc:Ignorable="d"
-        Title="MainWindow" Height="0" Width="0" Topmost="True" ResizeMode="NoResize" 
-        ShowInTaskbar="False" AllowsTransparency="True" Background="Transparent" WindowStyle="None" >
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
 
     </Grid>

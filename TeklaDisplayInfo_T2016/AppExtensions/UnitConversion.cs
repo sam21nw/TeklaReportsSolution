@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace TeklaDisplayInfo.AppExtensions
+namespace AppExtensions
 {
   public static class UnitConversion
   {

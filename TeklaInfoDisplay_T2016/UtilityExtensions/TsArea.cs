@@ -1,7 +1,7 @@
 ﻿using Tekla.BIM.Quantities;
 using Tekla.Structures.Model;
 
-namespace TeklaInfoDisplay.UtilityExtensions
+namespace UtilityExtensions
 {
   /// <summary>
   /// Extensions class for Tekla.BIM.Quantities class

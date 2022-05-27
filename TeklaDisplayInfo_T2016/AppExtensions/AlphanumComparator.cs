@@ -1,4 +1,4 @@
-﻿namespace TeklaDisplayInfo.AppExtensions
+﻿namespace AppExtensions
 {
   public class AlphanumComparator : System.Collections.Generic.IComparer<object>
   {

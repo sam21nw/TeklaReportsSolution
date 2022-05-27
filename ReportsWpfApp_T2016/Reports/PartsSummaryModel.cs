@@ -1,4 +1,4 @@
-﻿namespace TeklaReportsApp.Reports
+﻿namespace Reports
 {
   public class PartsSummaryModel
   {
